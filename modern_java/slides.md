@@ -26,7 +26,7 @@ mdc: true
 
 # Modern Java
 
-分享最近学习到的一些 Java 相关新知识
+最近学习到的一些 Java 相关新知识分享
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -95,9 +95,16 @@ Here is another comment.
 transition: slide-up
 level: 2
 
+# 新语法
+
+- **instanceof**
+- **pattern switch**
+- **record**
+- **sealed class**
+
 ---
 
-# Navigation
+# GC
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
 
