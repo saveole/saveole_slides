@@ -104,6 +104,18 @@ level: 2
 
 ---
 
+transition: slide-up
+level: 2
+
+# instanceof
+
+- **instanceof**
+- **pattern switch**
+- **record**
+- **sealed class**
+
+---
+
 # GC
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
