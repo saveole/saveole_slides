@@ -53,7 +53,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # Topics
 
 - 🐳 **Docker** - A containerization engine to run your app.
-- 📄 **Dockerfile** - Using a single file to define how to build a docker image.
+- 📄 **Dockerfile** - Using a single file to build a docker image.
 - 🚀 **Container and Java** - Java's support for containerization and how to.
 - 👉 **Examples** - Talk is cheap, let's build some images.
 - 🛠 **APM and Trouble Shooting** - Do APM first then diagnose and tune.
