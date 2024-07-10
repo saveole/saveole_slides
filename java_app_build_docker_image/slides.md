@@ -53,7 +53,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # Topics
 
 - 🐳 **Docker** - A containerization engine to run your app.
-- 📄 **Dcokerfile** - Using a single file to define how to build a docker image.
+- 📄 **Dockerfile** - Using a single file to define how to build a docker image.
 - 🚀 **Container and Java** - Java's support for containerization and how to.
 - 👉 **Examples** - Talk is cheap, let's build some images.
 - 🛠 **APM and Trouble Shooting** - Do APM first then diagnose and tune.
@@ -84,19 +84,29 @@ Here is another comment.
 
 # Docker
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. [learn more](https://docs.docker.com/guides/docker-overview/)
 
-## Keyboard Shortcuts
+<img src="https://dongshu.oss-cn-hangzhou.aliyuncs.com/scrm_front/0ccc911475124fe39df17a6fd97e5690docker-architecture.webp" />
 
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
+<style>
+img {
+  with: 100%;
+  height: 80%;
+}
+</style>
+
+---
+
+# Docker Client 的一些常用命令
+
+|                                                                                                                                                           |          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| <kbd>pull</kbd> / <kbd>push</kbd> / <kbd>load</kbd> / <kbd>save</kbd>                                                                                     | 镜像相关 |
+| <kbd>run</kbd> / <kbd>exec</kbd> / <kbd>cp</kbd> / <kbd>ps</kbd> / <kbd>stats</kbd> / <kbd>inspect</kbd> / <kbd>logs</kbd>                                | 容器相关 |
+| <kbd>build</kbd> / <kbd>[镜像分层分阶段](https://docs.docker.com/build/guide/layers/)</kbd> / <kbd>[构建缓存](https://docs.docker.com/build/cache/)</kbd> | 构建相关 |
 
 <!-- https://sli.dev/guide/animations.html#click-animations -->
-
+<!--
 <img
   v-click
   class="absolute -bottom-9 -left-7 w-80 opacity-50"
@@ -104,12 +114,11 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
   alt=""
 />
 
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p> -->
 
 ---
 
-layout: two-cols
-layoutClass: gap-16
+# [Dockerfile](https://docs.docker.com/build/building/packaging/)
 
 ---
 
@@ -563,8 +572,10 @@ dragPos:
 square: 691,32,167,\_,-16
 
 ---
+
 dragPos:
-  square: -101,0,0,0
+square: -101,0,0,0
+
 ---
 
 # Draggable Elements
@@ -612,7 +623,6 @@ src: ./pages/multiple-entries.md
 hide: false
 
 ---
-
 
 ---
 
