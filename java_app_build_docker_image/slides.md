@@ -118,7 +118,44 @@ img {
 
 ---
 
-# [Dockerfile](https://docs.docker.com/build/building/packaging/)
+# [Dockerfile](https://docs.docker.com/reference/dockerfile/)
+
+|                           |                |
+| ------------------------- | -------------- |
+| <kbd>FROM</kbd>           | 定义基础镜像   |
+| <kbd>RUN</kbd>            | 在新层执行命令 |
+| <kbd>WORKDIR</kbd>        | 工作目录       |
+| <kbd>COPY/ADD</kbd>       | 拷贝文件       |
+| <kbd>ARG</kbd>            | 构建时参数     |
+| <kbd>ENV</kbd>            | 环境变量       |
+| <kbd>EXPOSE</kbd>         | 暴露端口       |
+| <kbd>CMD/ENTRYPOINT</kbd> | 运行容器的命令 |
+
+---
+
+# 镜像分层
+
+<img src="https://dongshu.oss-cn-hangzhou.aliyuncs.com/scrm_front/ff3e6ed2a0124e35ae3f8000ce42774clayers.png" />
+
+---
+
+# [Dockerfile 最佳实践](https://docs.docker.com/build/building/best-practices/)
+
+- **Use multi-stage builds** -> 构建+运行
+- **Choose the right base image** -> 安全+轻量
+- **Rebuild your images often** -> 更新依赖
+- **Exclude with .dockerignore** -> 指定忽略文件
+- **Don't install unnecessary packages** -> 减少体积
+- **Sort multi-line arguments** -> 增加可读性
+- **Leverage build cache** -> 灵活使用构建缓存
+- **Pin base image versions** -> 镜像版本管理
+- **Build and test your images in CI** -> 结合 CI/CD
+
+---
+
+# Java 对容器环境的支持
+
+## 为什么需要支持容器化？
 
 ---
 
