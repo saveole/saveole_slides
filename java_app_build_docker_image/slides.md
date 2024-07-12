@@ -57,7 +57,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 - 🚀 **Container and Java** - Java's support for containerization and how to.
 - 👉 **Examples** - Talk is cheap, let's build some images.
 - 🛠 **APM and Trouble Shooting** - Do APM first then diagnose and tune.
-- 📚 **Resources** - Some useful resouces I want to share.
+- 📚 **Summary && Resources** - Some useful resouces I want to share.
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -155,7 +155,30 @@ img {
 
 # Java 对容器环境的支持
 
-## 为什么需要支持容器化？
+### 1. 为什么需要支持容器化？
+
+- 云原生时代下的容器化趋势
+- JVM 不能感知 <kbd>[cgoups](https://tech.meituan.com/2015/03/31/cgroups.html)</kbd>
+
+### 2. [Java 8.0_131 之后对容器的支持](https://blogs.oracle.com/java/post/java-on-container-like-a-pro)
+
+- <kbd>[-XX:+UseContainerSupport](https://chriswhocodes.com)</kbd>
+- <kbd>[JVM default ergonomics](https://learn.microsoft.com/en-us/azure/developer/java/containers/overview)</kbd>
+
+---
+
+# <kbd>容器环境的 GC 选择</kbd>
+
+| Factors             | SerialGC | ParallelGC                                 | G1GC                                                                   | ZGC                                                                    | ShenandoahGC                                                           |
+| ------------------- | -------- | ------------------------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| CPU 核数            | 1        | 2                                          | 2                                                                      | 2                                                                      | 2                                                                      |
+| 多线程              | No       | Yes                                        | Yes                                                                    | Yes                                                                    | Yes                                                                    |
+| 堆内存              | < 4g     | < 4g                                       | > 4g                                                                   | > 4g                                                                   | > 4g                                                                   |
+| 是否 stw            | Yes      | Yes                                        | Yes                                                                    | Yes(<1ms)                                                              | Yes(<10ms)                                                             |
+| 开销                | 低       | 低                                         | 中                                                                     | 中                                                                     | 中                                                                     |
+| Tail-latency-Effect | 高       | 高                                         | 高                                                                     | 低                                                                     | 中                                                                     |
+| JDK 版本            | All      | All                                        | JDK 8+                                                                 | JDK 17+                                                                | JDK 11+                                                                |
+| 适用场景            | 单核小堆 | 具有任何堆大小的多核小型堆或批处理工作负荷 | Responsive in medium to large heaps (request-response/DB interactions) | Responsive in medium to large heaps (request-response/DB interactions) | Responsive in medium to large heaps (request-response/DB interactions) |
 
 ---
 
