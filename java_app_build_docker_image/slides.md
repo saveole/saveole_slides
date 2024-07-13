@@ -55,8 +55,8 @@ The last comment block of each slide will be treated as slide notes. It will be 
 - 🐳 **Docker** - A containerization engine to run your app.
 - 📄 **Dockerfile** - Using a single file to build a docker image.
 - 🚀 **Container and Java** - Java's support for containerization and how to.
-- 👉 **Examples** - Talk is cheap, let's build some images.
 - 🛠 **APM and Trouble Shooting** - Do APM first then diagnose and tune.
+- 👉 **Examples** - Talk is cheap, let's build some images.
 - 📚 **Summary && Resources** - Some useful resouces I want to share.
 
 <!--
@@ -141,15 +141,15 @@ img {
 
 # [Dockerfile 最佳实践](https://docs.docker.com/build/building/best-practices/)
 
-- **Use multi-stage builds** -> 构建+运行
-- **Choose the right base image** -> 安全+轻量
-- **Rebuild your images often** -> 更新依赖
-- **Exclude with .dockerignore** -> 指定忽略文件
+- **Use multi-stage builds**             -> 构建+运行
+- **Choose the right base image**        -> 安全+轻量
+- **Rebuild your images often**          -> 更新依赖
+- **Exclude with .dockerignore**         -> 指定忽略文件
 - **Don't install unnecessary packages** -> 减少体积
-- **Sort multi-line arguments** -> 增加可读性
-- **Leverage build cache** -> 灵活使用构建缓存
-- **Pin base image versions** -> 镜像版本管理
-- **Build and test your images in CI** -> 结合 CI/CD
+- **Sort multi-line arguments**          -> 增加可读性
+- **Leverage build cache**               -> 灵活使用构建缓存
+- **Pin base image versions**            -> 镜像版本管理
+- **Build and test your images in CI**   -> 结合 CI/CD
 
 ---
 
@@ -164,21 +164,21 @@ img {
 
 - <kbd>[-XX:+UseContainerSupport](https://chriswhocodes.com)</kbd>
 - <kbd>[JVM default ergonomics](https://learn.microsoft.com/en-us/azure/developer/java/containers/overview)</kbd>
+- <kbd>不同容器环境的 GC 选择参考如下：</kbd>
 
 ---
 
-# <kbd>容器环境的 GC 选择</kbd>
 
 | Factors             | SerialGC | ParallelGC                                 | G1GC                                                                   | ZGC                                                                    | ShenandoahGC                                                           |
 | ------------------- | -------- | ------------------------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | CPU 核数            | 1        | 2                                          | 2                                                                      | 2                                                                      | 2                                                                      |
 | 多线程              | No       | Yes                                        | Yes                                                                    | Yes                                                                    | Yes                                                                    |
 | 堆内存              | < 4g     | < 4g                                       | > 4g                                                                   | > 4g                                                                   | > 4g                                                                   |
-| 是否 stw            | Yes      | Yes                                        | Yes                                                                    | Yes(<1ms)                                                              | Yes(<10ms)                                                             |
+| 是否 STW            | Yes      | Yes                                        | Yes                                                                    | Yes(<1ms)                                                              | Yes(<10ms)                                                             |
 | 开销                | 低       | 低                                         | 中                                                                     | 中                                                                     | 中                                                                     |
 | Tail-latency-Effect | 高       | 高                                         | 高                                                                     | 低                                                                     | 中                                                                     |
 | JDK 版本            | All      | All                                        | JDK 8+                                                                 | JDK 17+                                                                | JDK 11+                                                                |
-| 适用场景            | 单核小堆 | 具有任何堆大小的多核小型堆或批处理工作负荷 | Responsive in medium to large heaps (request-response/DB interactions) | Responsive in medium to large heaps (request-response/DB interactions) | Responsive in medium to large heaps (request-response/DB interactions) |
+| 适用场景            | 单核小堆 | 具有任何堆大小的多核小型堆或批处理工作负荷 | 延迟优先的中大型堆 | 延迟优先的中大型堆 | 延迟优先的中大型堆 |
 
 ---
 
