@@ -60,23 +60,6 @@ The last comment block of each slide will be treated as slide notes. It will be 
 - 📚 **Summary && Resources** - 总结及资源分享
 
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
 Here is another comment.
 -->
 
@@ -194,6 +177,11 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 
 - <kbd>[-XX:+UseContainerSupport](https://chriswhocodes.com)</kbd>
 - <kbd>[JVM default ergonomics](https://learn.microsoft.com/en-us/azure/developer/java/containers/overview)</kbd>
+
+| 约束             | GC 类型 |
+| ------------------------  | -------- |
+| m <= 1791MB <kbd>+</kbd> 任意 cpu    | SerialGC       |
+| m >= 1792MB <kbd>+</kbd> 2+ cpu     | G1GC       |
 - <kbd>不同容器环境的 GC 选择参考如下：</kbd>
 
 ---
@@ -213,10 +201,10 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 
 # APM
 
-- 主机级监控 - Node Exporter
-- 容器级监控 - Cadvisor
-- 应用级监控 - Spring-Boot-Admin
-- 方法级监控 - JFR
+- 主机监控 - Node Exporter
+- 容器监控 - Cadvisor
+- 应用监控 - Spring-Boot-Admin
+- 方法监控 - JFR
 
 ---
 
@@ -239,6 +227,14 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 
 # Summary
 
+- Dockerfile
+  - FROM
+  - COPY/ADD
+  - RUN
+  - ENV
+  - EXPOSE
+  - CMD/ENTRYPOINT
+
 - 构建 Java 应用程序镜像的几种方式
   - fat jat + full jdk
   - fat jat + slim jdk
@@ -254,6 +250,7 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
   - [Baeldung Weekly](https://www.baeldung.com/category/weekly-review)
   - [Red Hat Developer Blog](https://developers.redhat.com/blog)
   - [Oracle Blogs | Java](https://blogs.oracle.com/java/)
+  - [Java Annotated](https://blog.jetbrains.com/idea/tag/java-annotated/)
 - ## 官网类
   - [Docker](https://www.docker.com/)
   - [OpenJDK](https://openjdk.org/)

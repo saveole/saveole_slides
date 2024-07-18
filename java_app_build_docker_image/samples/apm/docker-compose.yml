@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data:/prometheus/data
+    ports:
+      - 9090:9090
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus/data'
+      - '--web.console.templates=/etc/prometheus/console_templates'
+    depends_on:
+      - node-exporter
+      - cadvisor
+
+  grafana:
+    image: grafana/grafana:latest
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+      - ./dashboards:/var/lib/grafana/dashboards
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9100:9100
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    volumes:
+      - /:/rootfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /sys:/sys:ro
+      - /proc:/proc:ro
+    ports:
+      - 8080:8080
+    command:
+      - '--storage_path=/data'
+      - '--db_path=/data'
+      - '--http_port=8080'
+
+volumes:
+  data:
