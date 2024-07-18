@@ -52,12 +52,12 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # Topics
 
-- 🐳 **Docker** - A containerization engine to run your app.
-- 📄 **Dockerfile** - Using a single file to build a docker image.
-- 🚀 **Container and Java** - Java's support for containerization and how to.
-- 🛠 **APM and Trouble Shooting** - Do APM first then diagnose and tune.
-- 👉 **Examples** - Talk is cheap, let's build some images.
-- 📚 **Summary && Resources** - Some useful resouces I want to share.
+- 🐳 **Docker** - 容器引擎
+- 📄 **Dockerfile** - 镜像构建文件
+- 🚀 **Container and Java** - Java 对容器化的支持
+- 🛠 **APM and Trouble Shooting** - 如何监控和问题排查
+- 👉 **Examples** - 示例
+- 📚 **Summary && Resources** - 总结及资源分享
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -139,6 +139,36 @@ img {
 
 ---
 
+# Spring Boot Layers
+
+```shell
+# java -Djarmode=layertools -jar app.jar extract/list
+- dependencies
+- spring-boot-loader
+- snapshot-dependencies
+- application
+```
+
+<kbd>application/META-INF/MANIFEST.MF</kbd>
+
+```shell
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.4.1
+Build-Jdk-Spec: 21
+Implementation-Title: chat
+Implementation-Version: 0.0.1-SNAPSHOT
+Spring-Boot-Native-Processed: true
+Main-Class: org.springframework.boot.loader.launch.JarLauncher
+Start-Class: com.ds.chat.ChatApplication
+Spring-Boot-Version: 3.3.0
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
+Spring-Boot-Layers-Index: BOOT-INF/layers.idx
+```
+
+---
+
 # [Dockerfile 最佳实践](https://docs.docker.com/build/building/best-practices/)
 
 - **Use multi-stage builds** -> 构建+运行
@@ -193,7 +223,11 @@ img {
 # Trouble Shooting
 
 - GC 日志
+  - gceasy.io
+  - jifa
 - Heap dump
+  - mat
+  - jifa
 - Thread dump
 - Native memory leak
 
@@ -205,8 +239,39 @@ img {
 
 # Summary
 
+- 构建 Java 应用程序镜像的几种方式
+  - fat jat + full jdk
+  - fat jat + slim jdk
+  - spring boot layers
+  - spring boot native image
+
 ---
 
 # Resources
 
+- ## 博客/周刊类
+  - [Inside Java](https://inside.java/)
+  - [Baeldung Weekly](https://www.baeldung.com/category/weekly-review)
+  - [Red Hat Developer Blog](https://developers.redhat.com/blog)
+  - [Oracle Blogs | Java](https://blogs.oracle.com/java/)
+- ## 官网类
+  - [Docker](https://www.docker.com/)
+  - [OpenJDK](https://openjdk.org/)
+  - [Spring Boot](https://docs.spring.io/spring-boot/)
+
 ---
+
+<h1> Thank You 🙏 </h1>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+</style>
