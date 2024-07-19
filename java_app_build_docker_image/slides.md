@@ -22,6 +22,8 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
 mdc: true
+download: true
+exportFilename: how_to_build_java_app_docker_image.pdf
 ---
 
 # Java 应用程序构建 Docker 镜像的几种方式
@@ -260,7 +262,7 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
   - [Docker](https://www.docker.com/)
   - [OpenJDK](https://openjdk.org/)
   - [Spring Boot](https://docs.spring.io/spring-boot/)
-- ## PPT 工具
+- ## PPT 制作工具
   - [Slidev](https://cn.sli.dev/)
 
 ---
