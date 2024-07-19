@@ -235,18 +235,18 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 
 - Dockerfile
 
-  - FROM
-  - COPY/ADD
-  - RUN
-  - ENV
-  - EXPOSE
-  - CMD/ENTRYPOINT
+  - <kbd>FROM</kbd>
+  - <kbd>COPY/ADD</kbd>
+  - <kbd>RUN</kbd>
+  - <kbd>ENV</kbd>
+  - <kbd>EXPOSE</kbd>
+  - <kbd>CMD/ENTRYPOINT</kbd>
 
 - 构建 Java 应用程序镜像的几种方式
-  - fat jat + full jdk
-  - fat jat + slim jdk
-  - spring boot layers
-  - spring boot native image
+  - <kbd>Fat jar</kbd> + <kbd>Full JDK</kbd>
+  - <kbd>Fat jar</kbd> + <kbd>Slim JDK</kbd>
+  - <kbd>Spring boot layers</kbd>
+  - <kbd>Spring boot native image</kbd>
 
 ---
 
