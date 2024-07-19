@@ -178,10 +178,11 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 - <kbd>[-XX:+UseContainerSupport](https://chriswhocodes.com)</kbd>
 - <kbd>[JVM default ergonomics](https://learn.microsoft.com/en-us/azure/developer/java/containers/overview)</kbd>
 
-| 约束             | GC 类型 |
-| ------------------------  | -------- |
-| m <= 1791MB <kbd>+</kbd> 任意 cpu    | SerialGC       |
-| m >= 1792MB <kbd>+</kbd> 2+ cpu     | G1GC       |
+| 约束                              | GC 类型  |
+| --------------------------------- | -------- |
+| m <= 1791MB <kbd>+</kbd> 任意 cpu | SerialGC |
+| m >= 1792MB <kbd>+</kbd> 2+ cpu   | G1GC     |
+
 - <kbd>不同容器环境的 GC 选择参考如下：</kbd>
 
 ---
@@ -201,23 +202,26 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 
 # APM
 
-- 主机监控 - Node Exporter
-- 容器监控 - Cadvisor
-- 应用监控 - Spring-Boot-Admin
-- 方法监控 - JFR
+- 主机监控 - Node Exporter + [Prometheus](http://192.168.3.9:9090) + [Grafana](http://192.168.3.9:3000)
+- ~~容器监控 - Cadvisor~~
+- 应用监控 - [Spring-Boot-Admin](http://192.168.3.9:8080/applications)
+- 方法监控 - [JFR](https://openjdk.org/jeps/328) + [OpenTelemetry](https://spring.io/blog/2022/10/12/observability-with-spring-boot-3)
 
 ---
 
 # Trouble Shooting
 
 - GC 日志
-  - gceasy.io
-  - jifa
+  - [gceasy.io](https://www.gceasy.io/)
+  - [jifa](http://192.168.3.9:8102)
 - Heap dump
   - mat
-  - jifa
+  - [jifa](http://192.168.3.9:8102)
 - Thread dump
+  - [jifa](http://192.168.3.9:8102)
+  - jstack ${pid}
 - Native memory leak
+  - `-XX:NativeMemoryTracking=summary`
 
 ---
 
@@ -228,6 +232,7 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 # Summary
 
 - Dockerfile
+
   - FROM
   - COPY/ADD
   - RUN
