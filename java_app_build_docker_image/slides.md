@@ -260,6 +260,8 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
   - [Docker](https://www.docker.com/)
   - [OpenJDK](https://openjdk.org/)
   - [Spring Boot](https://docs.spring.io/spring-boot/)
+- ## PPT 工具
+  - [Slidev](https://cn.sli.dev/)
 
 ---
 
