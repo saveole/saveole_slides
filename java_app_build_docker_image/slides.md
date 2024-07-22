@@ -75,7 +75,7 @@ Docker is an open platform for developing, shipping, and running applications. D
 
 <style>
 img {
-  with: 100%;
+  width: 100%;
   height: 80%;
 }
 </style>
