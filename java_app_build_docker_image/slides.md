@@ -22,7 +22,7 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
 mdc: true
-download: true
+download: "https://little-ant.oss-cn-hangzhou.aliyuncs.com/pdf/how_to_build_java_app_docker_image.pdf"
 exportFilename: how_to_build_java_app_docker_image.pdf
 ---
 
@@ -37,9 +37,9 @@ How to build Docker images for Java applications?
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+  <!-- <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
-  </button>
+  </button> -->
   <a href="https://github.com/saveole/saveole_slides/tree/main/java_app_build_docker_image" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
