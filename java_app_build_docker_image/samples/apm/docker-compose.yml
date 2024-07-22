@@ -4,7 +4,7 @@ services:
   prometheus:
     image: dockerproxy.cn/prom/prometheus:latest
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       #- ./data:/prometheus/data
     ports:
       - 9090:9090
@@ -19,10 +19,14 @@ services:
   grafana:
     image: dockerproxy.cn/grafana/grafana:latest
     volumes:
-      - ./grafana.ini:/etc/grafana/grafana.ini
-      - ./dashboards:/var/lib/grafana/dashboards
+      - ./grafana/grafana-datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+      - ./grafana/grafana-all-dashboards.yml:/etc/grafana/provisioning/dashboards/all.yml
+      - ./grafana/1860_node_exporter.json:/var/lib/grafana/dashboards/node-exporter.json
+      - ./grafana/17053_Spring_Boot_Endpoint_Metrics_2.0.json:/var/lib/grafana/dashboards/Spring_Boot_Endpoint_Metrics_2.0.json
     ports:
       - 3000:3000
+    environment:
+      GF_INSTALL_PLUGINS: grafana-simple-json-datasource
     depends_on:
       - prometheus
 
