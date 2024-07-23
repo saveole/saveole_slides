@@ -90,17 +90,6 @@ img {
 | <kbd>run</kbd> / <kbd>exec</kbd> / <kbd>cp</kbd> / <kbd>ps</kbd> / <kbd>stats</kbd> / <kbd>inspect</kbd> / <kbd>logs</kbd>                                | 容器相关 |
 | <kbd>build</kbd> / <kbd>[镜像分层分阶段](https://docs.docker.com/build/guide/layers/)</kbd> / <kbd>[构建缓存](https://docs.docker.com/build/cache/)</kbd> | 构建相关 |
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<!--
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p> -->
-
 ---
 
 # [Dockerfile](https://docs.docker.com/reference/dockerfile/)
@@ -262,6 +251,7 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
   - [Docker](https://www.docker.com/)
   - [OpenJDK](https://openjdk.org/)
   - [Spring Boot](https://docs.spring.io/spring-boot/)
+  - [Learn Java](https://dev.java/learn/)
 - ## PPT 制作工具
   - [Slidev](https://cn.sli.dev/)
 
